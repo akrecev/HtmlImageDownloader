@@ -3,7 +3,7 @@ package ru.kretsev;
 import org.apache.commons.validator.routines.UrlValidator;
 import ru.kretsev.Exception.HtmlDownloadException;
 import ru.kretsev.Exception.HtmlParsingException;
-import ru.kretsev.Exception.ImageDownloadException;
+import ru.kretsev.Exception.DownloadDirectoryException;
 import ru.kretsev.service.HtmlDownloader;
 import ru.kretsev.service.ImageDownloader;
 import ru.kretsev.service.ImageParser;
@@ -49,7 +49,7 @@ public class Main {
 
             System.out.println("Successfully loaded " + imageUrls.size() + " images");
 
-        } catch (HtmlDownloadException | HtmlParsingException | ImageDownloadException e) {
+        } catch (HtmlDownloadException | HtmlParsingException | DownloadDirectoryException e) {
             System.err.println("Error: " + e.getMessage());
         }
     }

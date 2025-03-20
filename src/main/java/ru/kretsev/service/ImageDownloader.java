@@ -1,6 +1,6 @@
 package ru.kretsev.service;
 
-import ru.kretsev.Exception.ImageDownloadException;
+import ru.kretsev.Exception.DownloadDirectoryException;
 
 import java.io.File;
 import java.io.IOException;
@@ -12,11 +12,11 @@ import java.nio.file.Paths;
 import java.util.List;
 
 public class ImageDownloader {
-    public void downloadImages(List<String> imageUrls, String outputDir) throws ImageDownloadException {
+    public void downloadImages(List<String> imageUrls, String outputDir) throws DownloadDirectoryException {
         File directory = new File(outputDir);
         if (!directory.exists()) {
             if (!directory.mkdirs()) {
-                throw new ImageDownloadException("Failed to create output directory: " + outputDir);
+                throw new DownloadDirectoryException("Failed to create output directory: " + outputDir);
             }
         }
 
