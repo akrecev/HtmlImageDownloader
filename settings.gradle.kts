@@ -1,2 +1,2 @@
-rootProject.name = "ToptParser"
+rootProject.name = "HtmlImageDownloader"
 
